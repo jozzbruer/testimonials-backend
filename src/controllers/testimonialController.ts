@@ -13,4 +13,13 @@ export class TestimonialContoller {
 			response.status(500).json({ message: `Something happened ${error}` });
 		}
 	}
+
+	async getAll(request: Request, response: Response, next: NextFunction) {
+		try {
+			const result = await testimonialService.getAll();
+			return response.status(200).json(result);
+		} catch (error) {
+			response.status(500).json({ message: `Something happened ${error}` });
+		}
+	}
 }

@@ -13,4 +13,8 @@ export class TestimonialRepository {
 			},
 		});
 	}
+
+	async getAll() {
+		return await prismaClient.testimonial.findMany();
+	}
 }

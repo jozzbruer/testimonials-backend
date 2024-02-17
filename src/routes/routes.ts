@@ -3,7 +3,8 @@ import { TestimonialContoller } from '../controllers/testimonialController';
 
 const routes = Router();
 
-const { create } = new TestimonialContoller();
+const { create, getAll } = new TestimonialContoller();
 routes.post('/create', create);
+routes.get('/get', getAll);
 
 export default routes;
